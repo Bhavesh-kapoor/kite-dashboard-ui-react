@@ -1,0 +1,71 @@
+/* TOPBAR */
+body{
+  margin: 0px;
+  padding: 0px;
+}
+.topbar-container {
+  border-bottom: 0.1px solid rgb(214, 212, 212);
+  background-color: white;
+  -webkit-box-shadow: 0 2px 1px -6px black;
+}
+.topbar-container .col-4,
+.topbar-container .col-8 {
+  padding: 20px 20px;
+}
+.topbar-container .col-4{
+    border-right: 1px solid rgb(214, 212, 212);
+}
+
+
+/* Menu bar  style */
+.menu-conatiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-conatiner ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-conatiner ul li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.point-index {
+  color: rgb(228, 63, 91);
+}
+.menu-conatiner img {
+  width: 35px;
+  height: 30px;
+}
+.active-menu {
+  color: rgb(228, 63, 91) !important;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.menu:hover {
+  color: rgb(228, 63, 91) !important;
+}
+
+/* side bar section */
+.sidebar-search {
+  border-bottom: 0.1px solid rgb(214, 212, 212);
+}
+
+.favourite {
+  border-right:0.1px solid rgb(214, 212, 212);
+  height: 85vh;
+}
+
+/* dashboard */
+
+

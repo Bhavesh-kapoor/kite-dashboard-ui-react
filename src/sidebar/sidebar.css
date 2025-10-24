@@ -1,0 +1,45 @@
+.watchlist-items ul {
+  padding-left: 0px;
+  margin: 0;
+}
+.watchlist-items ul li {
+  border-bottom: 1px solid rgb(214, 212, 212);
+  list-style: none;
+  padding: 10px;
+}
+.watchlist-items {
+  height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden; /* no horizontal scroll */
+  scrollbar-width: thin;
+}
+.watchlist-items::-webkit-scrollbar {
+  width: 6px;
+}
+.watchlist-items::-webkit-scrollbar-thumb {
+  background: #cfd4dc;
+  border-radius: 10px;
+}
+
+.stock-container {
+  display: flex;
+  justify-content: space-between;
+}
+.watchlist-items ul li:hover{
+    background-color: aliceblue;
+}
+.stock-condition {
+  display: flex;
+  gap: calc(1vw);
+  font-size: 15px;
+}
+.up {
+  color: rgb(7, 204, 7);
+}
+.down {
+  color: red;
+}
+
+.watchlist-action-options button{
+    margin-left: 10px;
+}

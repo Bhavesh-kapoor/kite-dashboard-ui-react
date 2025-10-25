@@ -1,7 +1,20 @@
-import { positions } from "../data/data";
+// import { positions } from "../data/data";
+import { useState } from "react";
 import "./positions.css";
+import { useEffect } from "react";
+import axios from "axios";
+
 
 function Position() {
+
+  const  [positions,setPositions] = useState([]);
+  
+  useEffect(()=>{
+    axios.get('http://127.0.0.1:3002/api/positions').then((res)=>{
+      setPositions(res.data.data);
+    })
+  },[]);
+
   return (
     <div className="container mt-5">
       <div className="row">

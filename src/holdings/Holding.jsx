@@ -1,12 +1,21 @@
-import { holdings } from "../data/data";
+// import { holdings } from "../data/data";
+import { useState ,useEffect} from "react";
 import "./Holding.css";
+import axios from 'axios';
 function Holding() {
+  const [holdings,setHoldings]  =  useState([]);
+  useEffect(()=>{
+    axios.get('http://127.0.0.1:3002/api/holdings').then((res)=>{
+      setHoldings(res.data.data);
+    });
+
+  },[])
   return (
     <div className="container mt-5">
       <div className="row">
         <div className="col-12">
           <h2 className="fs-5 mt-2 text-muted fw-normal">
-            <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+            <i className="fa fa-hourglass-start" aria-hidden="true"></i>
             &nbsp; Holdings({holdings.length})
           </h2>
         </div>

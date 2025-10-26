@@ -6,7 +6,7 @@ function Dashboard() {
       <div className="row">
         <div className="col-12">
           <h2 className="fs-5 mt-3 text-muted fw-normal">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp; Equity
+            <i className="fa fa-clock-o" aria-hidden="true"></i>&nbsp; Equity
           </h2>
         </div>
         <div className="col-4 mt-4 text-center p-5 border-end">
@@ -22,7 +22,7 @@ function Dashboard() {
       <div className="row">
         <div className="col-12">
           <h2 className="fs-5 mt-2 text-muted fw-normal">
-            <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+            <i className="fa fa-hourglass-start" aria-hidden="true"></i>
             &nbsp; Holdings(13)
           </h2>
         </div>

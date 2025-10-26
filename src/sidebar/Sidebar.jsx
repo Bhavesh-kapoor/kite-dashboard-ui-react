@@ -1,13 +1,17 @@
 import { watchlist } from "../data/data";
 import { Tooltip, Grow } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./sidebar.css";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import GraphicEqIcon from '@mui/icons-material/GraphicEq';
+import GraphicEqIcon from "@mui/icons-material/GraphicEq";
+import BuyModel from "../utils/BuyModel.jsx";
+import { BuyModelContext } from "../context/BuyModelContext.jsx";
 function Sidebar() {
   return (
     <div>
+      <BuyModel />
+
       <div className="sidebar-search">
         <div className="d-flex justify-content-between p-2 align-items-center">
           <div>
@@ -57,23 +61,26 @@ const WatchListItems = ({ stock, index }) => {
           <div className={stock.isDown ? "down" : "up"}> ₹{stock.price}</div>
         </div>
       </div>
-      {showActionBar && <WatclistActions uid={index} />}
+      {showActionBar && <WatclistActions uid={index} stock={stock}/>}
     </li>
   );
 };
-const WatclistActions = ({ uid }) => {
+const WatclistActions = ({ uid , stock}) => {
+  const {handleOpenBuyModel} = useContext(BuyModelContext);
   return (
     <div className="d-flex justify-content-between">
       <div></div>
-      <div  className="watchlist-action-options">
-        <Tooltip title="Buy (B)" placement="top" arrow>
-          <button className="btn btn-danger btn-sm">Buy</button>
+      <div className="watchlist-action-options">
+        <Tooltip title="Buy (B)" placement="top" >
+          <button onClick={()=>handleOpenBuyModel(stock)}  className="btn btn-danger btn-sm">Buy</button>
         </Tooltip>
         <Tooltip title="Sell (S)" placement="top" arrow>
-          <button className="btn btn-primary btn-sm">Sell</button>
+          <button onClick={()=>handleOpenBuyModel(stock,'Sell')}  className="btn btn-primary btn-sm">Sell</button>
         </Tooltip>
-         <Tooltip title="Analytics" placement="top" arrow>
-          <button className="btn btn-secondary btn-sm"><GraphicEqIcon/></button>
+        <Tooltip title="Analytics" placement="top" arrow>
+          <button className="btn btn-secondary btn-sm">
+            <GraphicEqIcon />
+          </button>
         </Tooltip>
         <Tooltip title="More" placement="top" arrow>
           <button className="btn btn-warning btn-sm text-white">More</button>

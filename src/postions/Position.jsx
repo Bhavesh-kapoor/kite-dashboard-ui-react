@@ -10,7 +10,7 @@ function Position() {
   const  [positions,setPositions] = useState([]);
   
   useEffect(()=>{
-    axios.get('http://127.0.0.1:3002/api/positions').then((res)=>{
+    axios.get(`${import.meta.env.VITE_API_URL}positions`).then((res)=>{
       setPositions(res.data.data);
     })
   },[]);

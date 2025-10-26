@@ -5,7 +5,7 @@ import axios from 'axios';
 function Holding() {
   const [holdings,setHoldings]  =  useState([]);
   useEffect(()=>{
-    axios.get('http://127.0.0.1:3002/api/holdings').then((res)=>{
+    axios.get(`${import.meta.env.VITE_API_URL}holdings`).then((res)=>{
       setHoldings(res.data.data);
     });
 

@@ -1,0 +1,13 @@
+.login-container{
+    width: 25%;
+    margin: auto;
+}
+.login-container img{
+    width: 60px;
+    height: auto;
+}
+.login-container .btn{
+    width: 93%;
+    background-color: #f6461a;
+    color: white;
+}

@@ -6,17 +6,22 @@ import "./index.css";
 import OrderPage from './orders/OrderPage.jsx';
 import HoldingPage from './holdings/HoldingPage.jsx';
 import PositionPage from './postions/PositionPage.jsx';
+import { CookiesProvider } from 'react-cookie';
+import SingIn from './auth/Singin.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <CookiesProvider>
     <BrowserRouter>
       <Routes>
           <Route path='/*' element={<Home/> }/>
           <Route path='/orders' element={<OrderPage/> }/>
           <Route path='/holdings' element={<HoldingPage/> }/>
           <Route path='/positions' element={<PositionPage/> }/>
+          <Route path='/login' element={<SingIn/>} />
       </Routes>
     </BrowserRouter>
+    </CookiesProvider>
  
   </StrictMode>,
 )

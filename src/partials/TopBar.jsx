@@ -1,4 +1,4 @@
-import Menu from "./Menu";
+import NavMenu from "./Menu";
 
 function TopBar() {
   return (
@@ -20,7 +20,7 @@ function TopBar() {
             </div>
           </div>
           <div className="col-8">
-            <Menu />
+            <NavMenu />
           </div>
         </div>
       </div>
